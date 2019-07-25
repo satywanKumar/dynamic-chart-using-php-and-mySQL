@@ -1,17 +1,32 @@
 <?php
+error_reporting(0);
 $servername = "localhost";
 $username = "root";
 $password = "";
+$db = "chart";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password);
-
+$connect= new mysqli($servername,$username,$password,$db);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 echo "Connected successfully";
-$hi = 10;
+$query="select * from barChart";
+$result = $connect->query($query);
+while($row = $result->fetch_assoc())
+{
+	  $GLOBALS['y10'] =$row["y10"];
+	  $GLOBALS['y11'] =$row["y11"];
+	  $GLOBALS['y12'] =$row["y12"];
+	  $GLOBALS['y13'] =$row["y13"];
+	  $GLOBALS['y14'] =$row["y14"];
+	  $GLOBALS['y15'] =$row["y15"];
+	  $GLOBALS['y16'] =$row["y16"];
+	  $GLOBALS['y17'] =$row["y17"];
+	  $GLOBALS['y18'] =$row["y18"];
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -31,7 +46,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js">
 
 <canvas id="myChart" width="900" height="400"></canvas> 
 <script type="text/javascript"> 
-var LE = <?php echo $hi ?>;
+var LE = <?php echo $y10 ?>;
 
 var ctx = document.getElementById("myChart"); 
 var myChart = new Chart(ctx, { 
