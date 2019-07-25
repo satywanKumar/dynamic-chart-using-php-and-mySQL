@@ -46,16 +46,24 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js">
 
 <canvas id="myChart" width="900" height="400"></canvas> 
 <script type="text/javascript"> 
-var LE = <?php echo $y10 ?>;
+var y10 = <?php echo $y10 ?>;
+var y11 = <?php echo $y11 ?>;
+var y12 = <?php echo $y12 ?>;
+var y13 = <?php echo $y13 ?>;
+var y14= <?php echo $y14 ?>;
+var y15 = <?php echo $y15 ?>;
+var y16 = <?php echo $y16 ?>;
+var y17 = <?php echo $y17 ?>;
+var y18 = <?php echo $y18 ?>;
 
 var ctx = document.getElementById("myChart"); 
 var myChart = new Chart(ctx, { 
 type: 'bar', 
 data: { 
-	labels: ["LE", "IT" , "ECE" , "EE", "ME", "BE"], 
+	labels: ["CSE","Mech","ECE","EE","EEE","IT","BCA","MCA","MBA"], 
 	datasets: [ 
 	{ label: '# of students', 
-		data: [LE,124,78,91,62,56], 
+		data: [y10,y11,y12,y13,y14,y15,y16,y17,y18], 
 		backgroundColor :['rgba(255, 99, 132, 0.2)', 
 				'rgba(54, 162, 235, 0.2)', 
 				'rgba(255, 206, 86, 0.2)', 
